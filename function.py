@@ -1,4 +1,9 @@
-def InputIntNumbers():
+from random import randint
+
+def input_int_numbers() -> int:
+    """
+    Ввод и проверка целого числа
+    """
     index = True
     while index:
         try:
@@ -50,3 +55,18 @@ def RandomNumberInt(a,x):
     rand=float(rand/(10**count))
     rand=int((x-a)*rand)
     return a+rand
+
+
+def сreating_list_int() -> list:
+    """
+    Создает список INT случайных чисел с запросом размера
+    Есть проверка ввода размера
+    """
+
+    size = (input("Введите размер списка: "))
+    size = int(input_int_numbers(size))
+    numbers = []
+    for i in range(size):
+        numbers.append(randint(1, 10))
+    return numbers
+
