@@ -13,8 +13,17 @@
 # Фредди Меркури 3
 # Анастасия Пономарева 4
 
+import shutil
 from dataclasses import replace
 import re
+from tkinter.filedialog import askopenfilename
+from pathlib import Path
+from dataclasses import replace
+import shutil
+
+from dataclasses import replace
+import re
+import shutil
 
 str_new=[]
 student=open('student.txt', 'r', encoding="utf-8")
@@ -33,18 +42,4 @@ student_new=open('student_new.txt', 'w',encoding="utf-8")
 for element in str_new:
      student_new.write(element)
 student_new.close()
-student=open('student.txt', 'r', encoding="utf-8")
-while True:
-        line = student.readline()
-        print(line)
-        if not line:
-            break
-student.close()
-student_new=open('student_new.txt', 'r', encoding="utf-8")
-while True:
-        line = student_new.readline()
-        print(line)
-        if not line:
-            break
-student_new.close()
-
+shutil.copyfile('student_new.txt', 'student.txt')
